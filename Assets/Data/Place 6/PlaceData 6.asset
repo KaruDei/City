@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2987d987755c0e84ab0456023fda63d2, type: 3}
+  m_Name: PlaceData 6
+  m_EditorClassIdentifier: 
+  PlaceName: "\u0417\u043D\u0430\u043C\u0435\u043D\u0441\u043A\u0438\u0439 \u0441\u043E\u0431\u043E\u0440"
+  PlaceImage: {fileID: 21300000, guid: d02a0d865f861a94b8db96ee483f78f2, type: 3}
+  PlaceInfo: "\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F"
+  PlaceImageDone: {fileID: 21300000, guid: d02a0d865f861a94b8db96ee483f78f2, type: 3}
+  PlaceImageActive: {fileID: 21300000, guid: 40a6949ba689a0341927f72b4d0c592d, type: 3}
+  PlaceImageDisabled: {fileID: 21300000, guid: 59fcdd0d20098e1449b98a23abd93a27, type: 3}
+  PuzzleDataList:
+  - {fileID: 11400000, guid: 0f96a036dd5a44a4bb89efb883f7e217, type: 2}
+  - {fileID: 11400000, guid: b8b5ab2c60e27d24cbcc6f9918c93300, type: 2}
+  - {fileID: 11400000, guid: 392cd56bbf498bf4babf2ad5137e0f11, type: 2}
+  - {fileID: 11400000, guid: 53fca87e558972f48a52979aabef8935, type: 2}
+  QuizDataList:
+  - {fileID: 11400000, guid: 54f00c79082f95840bf95f3b5dfa6707, type: 2}
+  - {fileID: 11400000, guid: bdcbc7f6639f7754597bc8b5deba0f45, type: 2}
+  - {fileID: 11400000, guid: 021f6e50f0e86674b8c869e0c16f1b77, type: 2}
+  - {fileID: 11400000, guid: 01a14e5f3361fea45ae7b0c8061a2afb, type: 2}
+  RebusDataList:
+  - {fileID: 11400000, guid: 96d4fb99b74800d409a913bcd6396458, type: 2}
+  - {fileID: 11400000, guid: fa6be5ace8f996349a04d81ae70a6937, type: 2}
+  - {fileID: 11400000, guid: 703dd54aae40aad42ab8e4bcc0d54b06, type: 2}
+  PuzzleDoneList: []
+  QuizDoneList: []
+  RebusDoneList: []
+  PuzzleFailList: []
+  QuizFailList: []
+  RebusFailList: []
