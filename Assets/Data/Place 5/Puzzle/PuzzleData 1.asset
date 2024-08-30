@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334d66390659ce44db92de1f7d3b046d, type: 3}
   m_Name: PuzzleData 1
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 56b5c231263be1b46aae6aa7e70a98a8, type: 3}
+  Sprite: {fileID: 21300000, guid: 8291cc88a41e686469267ac11a64deec, type: 3}
   CountSlicesX: 2
   CountSlicesY: 2

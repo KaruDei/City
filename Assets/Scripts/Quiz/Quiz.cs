@@ -23,6 +23,7 @@ public class Quiz : MonoBehaviour
     [SerializeField] private GameObject _quizGameWindow;
     [SerializeField] private GameObject _quizWinWindow;
     [SerializeField] private Button _quizWinWindowRedyButton;
+    [SerializeField] private Button _redyButton;
 
     private Place _tempPlace;
     private QuizData _tempQuizData;
@@ -65,6 +66,8 @@ public class Quiz : MonoBehaviour
         _timerImage.fillAmount = 1f;
         _timerText.text = (_totalTimerTime - _elapsedTimerTime).ToString("0");
         _timerActive = true;
+
+        _redyButton.interactable = true;
 
         SetFunctionalButtons();
     }
@@ -144,6 +147,7 @@ public class Quiz : MonoBehaviour
 
     public void CheckAnswer()
     {
+        _redyButton.interactable = false;
         _timerActive = false;
 
         if (_tempQuizData.CorrectOrderFuntion && !_tempQuizData.FiftyFiftyFuntion)
@@ -162,7 +166,7 @@ public class Quiz : MonoBehaviour
                     _win = false;
                     AddData(null, _tempQuizData);
                     _questionFieldAnimator.SetTrigger("Fail");
-                    Invoke("EndQuiz", 1f);
+                    Invoke("EndQuiz", 0.5f);
                     return;
                 }
             }
@@ -195,7 +199,7 @@ public class Quiz : MonoBehaviour
             _questionFieldAnimator.SetTrigger("Fail");
         }
 
-        Invoke("EndQuiz", 1f);
+        Invoke("EndQuiz", 0.5f);
     }
 
     private void AddData(QuizData done, QuizData fail)
@@ -211,7 +215,7 @@ public class Quiz : MonoBehaviour
         AddData(null, _tempQuizData);
         _questionFieldAnimator.SetTrigger("Fail");
 
-        Invoke("EndQuiz", 1f);
+        Invoke("EndQuiz", 0.5f);
     }
 
     private void EndQuiz()

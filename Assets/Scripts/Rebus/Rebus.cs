@@ -18,6 +18,7 @@ public class Rebus : MonoBehaviour
 	[SerializeField] private GameObject _rebusGameWindow;
 	[SerializeField] private GameObject _rebusWinWindow;
 	[SerializeField] private Button _rebusWinWindowRedyButton;
+    [SerializeField] private Button _redyButton;
 
     private Place _tempPlace;
     private RebusData _tempRebusData;
@@ -31,6 +32,7 @@ public class Rebus : MonoBehaviour
 		_tempRebusData = GetRebusData();
 
 		_image.sprite = _tempRebusData.Sprite;
+        _redyButton.interactable = true;
     }
 
 	private RebusData GetRebusData()
@@ -61,20 +63,22 @@ public class Rebus : MonoBehaviour
 
 	public void CheckAnswer(TextMeshProUGUI input)
 	{
-		if (input.text.Replace("\u200b", "").Trim().ToLower() == _tempRebusData.Answer.ToLower())
+        _redyButton.interactable = false;
+
+        if (input.text.Replace("\u200b", "").Trim().ToLower() == _tempRebusData.Answer.ToLower())
 		{
 			_win = true;
-			AddData(_tempRebusData, null);
+            AddData(_tempRebusData, null);
             _inputAnimator.SetTrigger("Correct");
         }
 		else
 		{
             _win = false;
-			AddData(null, _tempRebusData);
+            AddData(null, _tempRebusData);
 			_inputAnimator.SetTrigger("Fail");
         }
-
-		Invoke("EndRebus", 1f);
+        input.text = "";
+        Invoke("EndRebus", 0.5f);
 	}
 
 	private void AddData(RebusData done, RebusData fail)

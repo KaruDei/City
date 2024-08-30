@@ -19,9 +19,17 @@ public class LoadSceneManager : MonoBehaviour
     {
         if (_loadingSceneOperation != null)
 		{
-			_loadText.text = $"Загрузка {Mathf.RoundToInt(_loadingSceneOperation.progress * 100)}%";
-			_loadProgressBar.localScale = new Vector2(Mathf.Lerp(_loadProgressBar.localScale.x, _loadingSceneOperation.progress, Time.deltaTime), _loadProgressBar.localScale.y);
-		}
+            if (_loadingSceneOperation.progress >= 0.85f)
+            {
+                _loadText.text = $"Загрузка {Mathf.RoundToInt(1f * 100)}%";
+                _loadProgressBar.localScale = new Vector2(Mathf.Lerp(_loadProgressBar.localScale.x, 1f, Time.deltaTime), _loadProgressBar.localScale.y);
+            }
+            else
+            {
+                _loadText.text = $"Загрузка {Mathf.RoundToInt(_loadingSceneOperation.progress * 100)}%";
+                _loadProgressBar.localScale = new Vector2(Mathf.Lerp(_loadProgressBar.localScale.x, _loadingSceneOperation.progress, Time.deltaTime), _loadProgressBar.localScale.y);
+            }
+        }
 
 		Invoke("DoneLoad", 3f);
     }
